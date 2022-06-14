@@ -1,0 +1,34 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.userRouter = void 0;
+const express_1 = __importDefault(require("express"));
+const UserController_1 = require("../controller/UserController");
+const UserBusiness_1 = require("../business/UserBusiness");
+const HashManager_1 = require("../services/HashManager");
+const idGenerator_1 = require("../services/idGenerator");
+const Authenticator_1 = require("../services/Authenticator");
+const UserDatabase_1 = require("../data/UserDatabase");
+const LeaguerBusiness_1 = require("../business/LeaguerBusiness");
+const LeaguerDataBase_1 = require("../data/LeaguerDataBase");
+const TeamBussines_1 = require("../business/TeamBussines");
+const TeamDataBase_1 = require("../data/TeamDataBase");
+const userBusiness = new UserBusiness_1.UserBusiness(new idGenerator_1.IdGenerator(), new HashManager_1.HashManager(), new Authenticator_1.Authenticator(), new UserDatabase_1.UserDatabase());
+exports.userRouter = express_1.default.Router();
+const userController = new UserController_1.UserController(userBusiness);
+const LeaguerBusinessRouter = new LeaguerBusiness_1.LeaguerBusiness(new idGenerator_1.IdGenerator(), new LeaguerDataBase_1.LeaguerDataBase());
+const TeamBusinessRouter = new TeamBussines_1.TeamBusiness(new idGenerator_1.IdGenerator(), new TeamDataBase_1.TeamDatabase());
+exports.userRouter.post("/signup", (req, res) => userController.sign(req, res));
+exports.userRouter.post("/login", (req, res) => userController.login(req, res));
+exports.userRouter.post("/signup-leaguer", (req, res) => LeaguerBusinessRouter.createLeaguer(req, res));
+exports.userRouter.put("/update-leaguer", (req, res) => LeaguerBusinessRouter.updateLeaguer(req, res));
+exports.userRouter.post("/add-leaguer-group", (req, res) => LeaguerBusinessRouter.AddLeaguerToGroup(req, res));
+exports.userRouter.get("/find-all-leaguers", (req, res) => LeaguerBusinessRouter.getLeaguers(res));
+exports.userRouter.get("/find-mentor-leaguers", (req, res) => LeaguerBusinessRouter.getLeaguersMentor(req, res));
+exports.userRouter.post("/create-team", (req, res) => TeamBusinessRouter.createTeam(req, res));
+exports.userRouter.post("/send-email", (req, res) => userController.sendEmail(req, res));
+exports.userRouter.post("/send-formulario/:email", (req, res) => userController.sendFomulario(req, res));
+exports.userRouter.get("/find-forms-by-leaguer", (req, res) => LeaguerBusinessRouter.getLeaguerForms(req, res));
+//# sourceMappingURL=UserRouter.js.map
