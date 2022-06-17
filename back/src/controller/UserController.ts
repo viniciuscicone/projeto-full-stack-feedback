@@ -245,47 +245,6 @@ export class UserController {
                 throw new Error("Os campos do formulario precisao estar no formato string");
             }
 
-
-            if (formulario.pergunta1 !== 'SIM' && formulario.pergunta1 !== "NAO") {
-
-                throw new Error(`pergunta1 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta2 !== 'SIM' && formulario.pergunta2 !== "NAO") {
-
-                throw new Error(`pergunta2 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta3 !== 'SIM' && formulario.pergunta3 !== "NAO") {
-
-                throw new Error(`pergunta3 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta4 !== 'SIM' && formulario.pergunta4 !== "NAO") {
-
-                throw new Error(`pergunta4 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta5 !== 'SIM' && formulario.pergunta5 !== "NAO") {
-
-                throw new Error(`pergunta5 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta6 !== 'SIM' && formulario.pergunta6 !== "NAO") {
-
-                throw new Error(`pergunta6 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta7 !== 'SIM' && formulario.pergunta7 !== "NAO") {
-
-                throw new Error(`pergunta7 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta8 !== 'SIM' && formulario.pergunta8 !== "NAO") {
-
-                throw new Error(`pergunta8 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta9 !== 'SIM' && formulario.pergunta9 !== "NAO") {
-
-                throw new Error(`pergunta9 precisao ser sim ou nao`);
-            }
-            if (formulario.pergunta10 !== 'SIM' && formulario.pergunta10 !== "NAO") {
-
-                throw new Error(`pergunta10 precisao ser sim ou nao`);
-            }
             if (formulario.projetos !== 'METASKILLS' && formulario.projetos !== "METAPEOPLE") {
 
                 throw new Error(`Projeto precisa ser especificado`);
