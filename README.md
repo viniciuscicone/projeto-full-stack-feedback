@@ -1,5 +1,6 @@
 # Projeto-full-stack-feedback
-projeto-full-stack-feedback
+
+Projeto full stack feedback de funcionarios
 
 Back end
 * Postman documentation
@@ -7,6 +8,17 @@ https://documenter.getpostman.com/view/19295583/UzBgwVsE
 * Link heroku
 https://vinicius-feedback.herokuapp.com
 
+### Tecnologias utilizadas 
+
+* NodeJS
+* Express
+* knex
+* NodeMailer
+* uuid
+* JWT
+* MySQL
+* TYPESCRYPT
+* CORS
 
 Front
 
@@ -21,3 +33,16 @@ Requisitos:
 * Autenticação;
 * Desenvolvimento de formulários;
 * Usabilidade e experiência do usuário.
+
+
+### Tecnologias utilizadas 
+
+* React
+* JavaScript
+* HTML5
+* CSS3
+* Styled-components
+* Material ui 
+* Axios
+* Faker-js
+
