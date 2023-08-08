@@ -5,12 +5,7 @@ import { userRouter } from './routes/UserRouter';
 import dotenv from "dotenv";
 
 export const app: Express = express()
-const corsOptions = {
-   "origin": "*",
-   "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
-   "preflightContinue": false,
-   "optionsSuccessStatus": 204
- }
+
 dotenv.config()
 app.use(cors(corsOptions)) 
 
